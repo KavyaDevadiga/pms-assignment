@@ -1,0 +1,743 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "35bcc2d9-b47b-4f1a-8a73-7422e2b17928",
+      "name": "API V1 - Auth, Projects & Tasks",
+      "description": "Collection for testing authentication, project, and task-related routes.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-12-19T20:11:09.000Z",
+      "createdAt": "2024-12-19T07:51:50.000Z",
+      "lastUpdatedBy": "24940793",
+      "uid": "24940793-35bcc2d9-b47b-4f1a-8a73-7422e2b17928"
+    },
+    "item": [
+      {
+        "name": "Authentication",
+        "item": [
+          {
+            "name": "Register User",
+            "id": "de6d63ba-b718-44c3-9fd9-4170552ebb30",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"email\": \"test1@example.com\",\n    \"password\": \"password123\",\n    \"username\": \"Test\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/auth/register",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "auth", "register"]
+              }
+            },
+            "response": [
+              {
+                "id": "270c9e37-1e96-40b5-ab1f-4cf97c289278",
+                "name": "Register User",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"test1@example.com\",\n    \"password\": \"password123\",\n    \"username\": \"Test\"\n}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/auth/register",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "auth", "register"]
+                  }
+                },
+                "status": "Created",
+                "code": 201,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully.\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"user\": {\n            \"id\": \"6763ee7f25fc0f74f8b829c5\",\n            \"username\": \"Test\",\n            \"email\": \"test1@example.com\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2NzYzZWU3ZjI1ZmMwZjc0ZjhiODI5YzciLCJ1c2VySWQiOiI2NzYzZWU3ZjI1ZmMwZjc0ZjhiODI5YzUiLCJpYXQiOjE3MzQ2MDIzNjcsImV4cCI6MTczNTQ2NjM2N30.U51grmdWClmvboNX8Cikw5-chRwYyCuPta7FT-YpazI\"\n    }\n}",
+                "uid": "24940793-270c9e37-1e96-40b5-ab1f-4cf97c289278"
+              }
+            ],
+            "uid": "24940793-de6d63ba-b718-44c3-9fd9-4170552ebb30"
+          },
+          {
+            "name": "Login User",
+            "id": "5cdb7206-20a8-4884-8f8c-76b34ca4089e",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/auth/login",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "auth", "login"]
+              }
+            },
+            "response": [
+              {
+                "id": "940c3568-c2c3-4582-b8f0-44e41c5a1c00",
+                "name": "Login User",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/auth/login",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "auth", "login"]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Login successful.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"user\": {\n            \"id\": \"6763ebdbc68681a08bb6652e\",\n            \"username\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2NzY0MjIyMjQ1MTlhZTJhMDg4YzE3MmQiLCJ1c2VySWQiOiI2NzYzZWJkYmM2ODY4MWEwOGJiNjY1MmUiLCJpYXQiOjE3MzQ2MTU1ODYsImV4cCI6MTczNTQ3OTU4Nn0.cmVkGdL7c9eHSrfVi95R17r9AqPWCwiHmbtc6BkDm4E\"\n    }\n}",
+                "uid": "24940793-940c3568-c2c3-4582-b8f0-44e41c5a1c00"
+              }
+            ],
+            "uid": "24940793-5cdb7206-20a8-4884-8f8c-76b34ca4089e"
+          },
+          {
+            "name": "Logout User",
+            "id": "d83d6e95-d206-47f3-80a8-331a1d60d8e4",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/auth/logout",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "auth", "logout"]
+              }
+            },
+            "response": [
+              {
+                "id": "a20d42ba-9fef-4dd6-8301-1ced764d50cc",
+                "name": "Logout User",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" },
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/auth/logout",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "auth", "logout"]
+                  }
+                },
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Logout successful.\",\n    \"statusCode\": 200\n}",
+                "uid": "24940793-a20d42ba-9fef-4dd6-8301-1ced764d50cc"
+              }
+            ],
+            "uid": "24940793-d83d6e95-d206-47f3-80a8-331a1d60d8e4"
+          }
+        ],
+        "id": "65996e5e-94c3-40dd-a25b-ecaae36076ed",
+        "uid": "24940793-65996e5e-94c3-40dd-a25b-ecaae36076ed"
+      },
+      {
+        "name": "Tasks",
+        "item": [
+          {
+            "name": "Create Task",
+            "id": "bd59c20e-fd59-4208-997f-f11d50db7deb",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"New Task\",\n    \"description\": \"Description of the task\",\n    \"due_date\": \"2024-12-31T00:00:00.000Z\",\n    \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n    \"projectId\":\"6763fb7f5dec70f9e791533b\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/tasks",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "tasks"]
+              }
+            },
+            "response": [
+              {
+                "id": "af2687fa-422b-4eed-b0a2-13e8895f8bd5",
+                "name": "Create Task",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"New Task\",\n    \"description\": \"Description of the task\",\n    \"due_date\": \"2024-12-31T00:00:00.000Z\",\n    \"assigned_to\": null,\n    \"projectId\": \"6763fb7f5dec70f9e791533b\"\n}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/tasks",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "tasks"]
+                  }
+                },
+                "code": 201,
+                "_postman_previewlanguage": null,
+                "header": null,
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Task created successfully.\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"title\": \"New Task\",\n        \"description\": \"Description of the task\",\n        \"status\": \"New\",\n        \"due_date\": \"2024-12-31T00:00:00.000Z\",\n        \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n        \"projectId\": \"6763fb7f5dec70f9e791533b\",\n        \"_id\": \"676409aacec762c33f875bf5\",\n        \"createdAt\": \"2024-12-19T11:55:22.366Z\",\n        \"updatedAt\": \"2024-12-19T11:55:22.366Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-af2687fa-422b-4eed-b0a2-13e8895f8bd5"
+              }
+            ],
+            "uid": "24940793-bd59c20e-fd59-4208-997f-f11d50db7deb"
+          },
+          {
+            "name": "Get Task by Project ID",
+            "id": "d340f984-af95-4d81-a5de-0fb3147b7fde",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/tasks/:projectId",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "tasks", ":projectId"],
+                "variable": [
+                  { "key": "projectId", "value": "6763fb7f5dec70f9e791533b" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "f30c1dd4-3a2c-4348-bcdf-a082a128de61",
+                "name": "Get Task by ID",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/tasks/:projectId",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "tasks", ":projectId"],
+                    "variable": [
+                      {
+                        "key": "projectId",
+                        "value": "6763fb7f5dec70f9e791533b"
+                      }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Tasks retrieved successfully.\",\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"6763fe6b8e84dfe7391fc40a\",\n            \"title\": \"Updated Task\",\n            \"description\": \"Updated description\",\n            \"status\": \"In Progress\",\n            \"due_date\": \"2024-12-25T00:00:00.000Z\",\n            \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n            \"createdAt\": \"2024-12-19T11:07:23.479Z\",\n            \"updatedAt\": \"2024-12-19T11:47:25.516Z\",\n            \"assignedUserDetails\": {\n                \"email\": \"test1@example.com\"\n            },\n            \"project\": \"Updated Project\"\n        },\n        {\n            \"_id\": \"676409aacec762c33f875bf5\",\n            \"title\": \"New Task\",\n            \"description\": \"Description of the task\",\n            \"status\": \"New\",\n            \"due_date\": \"2024-12-31T00:00:00.000Z\",\n            \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n            \"createdAt\": \"2024-12-19T11:55:22.366Z\",\n            \"updatedAt\": \"2024-12-19T11:55:22.366Z\",\n            \"assignedUserDetails\": {\n                \"email\": \"test1@example.com\"\n            },\n            \"project\": \"Updated Project\"\n        }\n    ]\n}",
+                "uid": "24940793-f30c1dd4-3a2c-4348-bcdf-a082a128de61"
+              }
+            ],
+            "uid": "24940793-d340f984-af95-4d81-a5de-0fb3147b7fde"
+          },
+          {
+            "name": "Update Task",
+            "id": "307d22b3-9059-45f4-a159-4802c25e6ada",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PATCH",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Updated Task\",\n    \"description\": \"Updated 98989899\",\n    \"status\": \"In Progress\",\n    \"due_date\": \"2024-12-25T00:00:00.000Z\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/tasks/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "tasks", ":id"],
+                "variable": [
+                  { "key": "id", "value": "6763fe6b8e84dfe7391fc40a" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "76a29e02-5a83-4c11-b199-13b0d280a2e5",
+                "name": "Update Task",
+                "originalRequest": {
+                  "method": "PATCH",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Updated Task\",\n    \"description\": \"Updated description\",\n    \"status\": \"In Progress\",\n    \"due_date\": \"2024-12-25T00:00:00.000Z\"\n}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/tasks/update/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "tasks", "update", ":id"],
+                    "variable": [
+                      { "key": "id", "value": "6763fe6b8e84dfe7391fc40a" }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Task updated successfully.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"6763fe6b8e84dfe7391fc40a\",\n        \"title\": \"Updated Task\",\n        \"description\": \"Updated 98989899\",\n        \"status\": \"In Progress\",\n        \"due_date\": \"2024-12-25T00:00:00.000Z\",\n        \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n        \"projectId\": \"6763fb7f5dec70f9e791533b\",\n        \"createdAt\": \"2024-12-19T11:07:23.479Z\",\n        \"updatedAt\": \"2024-12-19T11:57:22.098Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-76a29e02-5a83-4c11-b199-13b0d280a2e5"
+              }
+            ],
+            "uid": "24940793-307d22b3-9059-45f4-a159-4802c25e6ada"
+          },
+          {
+            "name": "Delete Task",
+            "id": "5d454054-d667-4488-877a-30b325d7eb6d",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "DELETE",
+              "header": [
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/tasks/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "tasks", ":id"],
+                "variable": [
+                  { "key": "id", "value": "6764067159dd39c7c3b41bcc" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "4a5ab1f2-0fff-4d59-93ce-f2105f07ba0e",
+                "name": "Delete Task",
+                "originalRequest": {
+                  "method": "DELETE",
+                  "header": [
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/tasks/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "tasks", ":id"],
+                    "variable": [
+                      { "key": "id", "value": "6764067159dd39c7c3b41bcc" }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Task deleted successfully.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"6763fe6b8e84dfe7391fc40a\",\n        \"title\": \"Updated Task\",\n        \"description\": \"Updated 98989899\",\n        \"status\": \"In Progress\",\n        \"due_date\": \"2024-12-25T00:00:00.000Z\",\n        \"assigned_to\": \"6763ee7f25fc0f74f8b829c5\",\n        \"projectId\": \"6763fb7f5dec70f9e791533b\",\n        \"createdAt\": \"2024-12-19T11:07:23.479Z\",\n        \"updatedAt\": \"2024-12-19T11:57:22.098Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-4a5ab1f2-0fff-4d59-93ce-f2105f07ba0e"
+              }
+            ],
+            "uid": "24940793-5d454054-d667-4488-877a-30b325d7eb6d"
+          }
+        ],
+        "id": "d834666d-10c0-4be9-ae3b-598bd4a15b9b",
+        "uid": "24940793-d834666d-10c0-4be9-ae3b-598bd4a15b9b"
+      },
+      {
+        "name": "Projects",
+        "item": [
+          {
+            "name": "Create Project",
+            "id": "64e881ef-52d9-4e67-8f06-db6dea2e6929",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Project Title\",\n    \"description\": \"Project description\",\n    \"start_date\": \"2024-12-01T00:00:00.000Z\",\n    \"end_date\": \"2024-12-31T00:00:00.000Z\",\n    \"assigned_users\":[]\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/projects",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "projects"]
+              }
+            },
+            "response": [
+              {
+                "id": "f2f2ccbf-785d-402e-a319-36c99a1d0bae",
+                "name": "Create Project",
+                "originalRequest": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"New Project\",\n    \"description\": \"Project description\",\n    \"start_date\": \"2024-12-01T00:00:00.000Z\",\n    \"end_date\": \"2024-12-31T00:00:00.000Z\",\n    \"assigned_users\":[]\n}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/projects",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "projects"]
+                  }
+                },
+                "status": "Created",
+                "code": 201,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Project created successfully.\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"title\": \"New Project\",\n        \"description\": \"Project description\",\n        \"start_date\": \"2024-12-01T00:00:00.000Z\",\n        \"end_date\": \"2024-12-31T00:00:00.000Z\",\n        \"assigned_users\": [],\n        \"ownerId\": \"6763ee7f25fc0f74f8b829c5\",\n        \"_id\": \"6763fb7f5dec70f9e791533b\",\n        \"createdAt\": \"2024-12-19T10:54:55.379Z\",\n        \"updatedAt\": \"2024-12-19T10:54:55.379Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-f2f2ccbf-785d-402e-a319-36c99a1d0bae"
+              }
+            ],
+            "uid": "24940793-64e881ef-52d9-4e67-8f06-db6dea2e6929"
+          },
+          {
+            "name": "Get Project by ID",
+            "id": "8baf8e81-7de1-4a27-b8bd-6632815c5013",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/projects/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "projects", ":id"],
+                "variable": [
+                  { "key": "id", "value": "67647cf8de3827b3331fd832" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "9e31c7b5-2edb-408b-be2f-fe36988c0507",
+                "name": "Get Project by ID",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/projects/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "projects", ":id"],
+                    "variable": [
+                      { "key": "id", "value": "67647cf8de3827b3331fd832" }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Project retrieved successfully.\",\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"67647cf8de3827b3331fd832\",\n            \"title\": \"project1\",\n            \"description\": \"Project description\",\n            \"start_date\": \"2024-12-01T00:00:00.000Z\",\n            \"end_date\": \"2024-12-31T00:00:00.000Z\",\n            \"assigned_users\": [],\n            \"ownerId\": \"6763ebdbc68681a08bb6652e\",\n            \"createdAt\": \"2024-12-19T20:07:20.939Z\",\n            \"updatedAt\": \"2024-12-19T20:07:20.939Z\",\n            \"__v\": 0\n        }\n    ]\n}",
+                "uid": "24940793-9e31c7b5-2edb-408b-be2f-fe36988c0507"
+              }
+            ],
+            "uid": "24940793-8baf8e81-7de1-4a27-b8bd-6632815c5013"
+          },
+          {
+            "name": "Get Project",
+            "id": "7c3a19be-368e-4519-b272-cb16af7791d3",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "GET",
+              "header": [
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/projects",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "projects"]
+              }
+            },
+            "response": [
+              {
+                "id": "a1f099ee-64d4-4570-9ba6-03182c2d5b25",
+                "name": "Get Project",
+                "originalRequest": {
+                  "method": "GET",
+                  "header": [
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/projects",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "projects"]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Projects fetched successfully.\",\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"6763fb7f5dec70f9e791533b\",\n            \"title\": \"Updated Project\",\n            \"description\": \"Updated description\",\n            \"start_date\": \"2024-12-01T00:00:00.000Z\",\n            \"end_date\": \"2024-12-31T00:00:00.000Z\",\n            \"assigned_users\": [\n                {\n                    \"_id\": \"6763ebdbc68681a08bb6652e\",\n                    \"email\": \"test@example.com\"\n                }\n            ],\n            \"ownerId\": \"6763ee7f25fc0f74f8b829c5\",\n            \"createdAt\": \"2024-12-19T10:54:55.379Z\",\n            \"updatedAt\": \"2024-12-19T10:57:08.441Z\",\n            \"__v\": 0\n        }\n    ]\n}",
+                "uid": "24940793-a1f099ee-64d4-4570-9ba6-03182c2d5b25"
+              }
+            ],
+            "uid": "24940793-7c3a19be-368e-4519-b272-cb16af7791d3"
+          },
+          {
+            "name": "Update Project",
+            "id": "8f135fa4-5db0-4535-bc0c-f647e7407139",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "PATCH",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" },
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Updated Project\",\n    \"description\": \"Updated description\",\n    \"assigned_users\": [\n        \"6763ebdbc68681a08bb6652e\"\n    ]\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/projects/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "projects", ":id"],
+                "variable": [
+                  { "key": "id", "value": "6763fb7f5dec70f9e791533b" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "ddff7f74-d3de-4127-8e80-5a129e5fec8f",
+                "name": "Update Project",
+                "originalRequest": {
+                  "method": "PATCH",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "type": "text"
+                    },
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"title\":\"Updated Project\", \"description\":\"Updated description\"}",
+                    "options": { "raw": { "language": "json" } }
+                  },
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/projects/update/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "projects", "update", ":id"],
+                    "variable": [
+                      { "key": "id", "value": "6763fb7f5dec70f9e791533b" }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Project updated successfully.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"6763fb7f5dec70f9e791533b\",\n        \"title\": \"Updated Project\",\n        \"description\": \"Updated description\",\n        \"start_date\": \"2024-12-01T00:00:00.000Z\",\n        \"end_date\": \"2024-12-31T00:00:00.000Z\",\n        \"assigned_users\": [\n            \"6763ebdbc68681a08bb6652e\"\n        ],\n        \"ownerId\": \"6763ee7f25fc0f74f8b829c5\",\n        \"createdAt\": \"2024-12-19T10:54:55.379Z\",\n        \"updatedAt\": \"2024-12-19T10:57:08.441Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-ddff7f74-d3de-4127-8e80-5a129e5fec8f"
+              }
+            ],
+            "uid": "24940793-8f135fa4-5db0-4535-bc0c-f647e7407139"
+          },
+          {
+            "name": "Delete Project",
+            "id": "98ce6830-7647-448a-9cd6-2e4c0865daeb",
+            "protocolProfileBehavior": { "disableBodyPruning": true },
+            "request": {
+              "method": "DELETE",
+              "header": [
+                { "key": "Authorization", "value": "Bearer {{authToken}}" }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/api/v1/projects/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "v1", "projects", ":id"],
+                "variable": [
+                  { "key": "id", "value": "6763f9611574b1c8938054ce" }
+                ]
+              }
+            },
+            "response": [
+              {
+                "id": "40036810-668e-4f4d-bcb8-a12ee91b13d2",
+                "name": "Delete Project",
+                "originalRequest": {
+                  "method": "DELETE",
+                  "header": [
+                    { "key": "Authorization", "value": "Bearer {{authToken}}" }
+                  ],
+                  "url": {
+                    "raw": "{{baseUrl}}/api/v1/projects/:id",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "v1", "projects", ":id"],
+                    "variable": [
+                      { "key": "id", "value": "6763f9611574b1c8938054ce" }
+                    ]
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "type": "text"
+                  }
+                ],
+                "cookie": [],
+                "responseTime": null,
+                "body": "{\n    \"success\": true,\n    \"message\": \"Project deleted successfully.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"6763f9611574b1c8938054ce\",\n        \"title\": \"Updated Project\",\n        \"description\": \"Updated description\",\n        \"start_date\": \"2024-12-01T00:00:00.000Z\",\n        \"end_date\": \"2024-12-31T00:00:00.000Z\",\n        \"assigned_users\": [\n            \"6763ebdbc68681a08bb6652e\"\n        ],\n        \"ownerId\": \"6763ee7f25fc0f74f8b829c5\",\n        \"createdAt\": \"2024-12-19T10:45:53.818Z\",\n        \"updatedAt\": \"2024-12-19T10:51:27.007Z\",\n        \"__v\": 0\n    }\n}",
+                "uid": "24940793-40036810-668e-4f4d-bcb8-a12ee91b13d2"
+              }
+            ],
+            "uid": "24940793-98ce6830-7647-448a-9cd6-2e4c0865daeb"
+          }
+        ],
+        "id": "261488fc-068a-4189-8a8f-6d78c2c311f9",
+        "uid": "24940793-261488fc-068a-4189-8a8f-6d78c2c311f9"
+      }
+    ]
+  }
+}

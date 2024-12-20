@@ -1,0 +1,56 @@
+├── jest.config.js
+├── jsconfig.json
+├── package.json
+├── package-lock.json
+├── src
+│   ├── config
+│   │   ├── db.js
+│   │   ├── env.js
+│   │   └── processHandlers.js
+│   ├── controllers
+│   │   └── v1
+│   │       ├── controllers.authentication.js
+│   │       ├── controllers.project.js
+│   │       └── controllers.task.js
+│   ├── middlewares
+│   │   ├── authenticate.js
+│   │   ├── basicConfig.js
+│   │   ├── errorHandler.js
+│   │   ├── requestLogger.js
+│   │   ├── validator.js
+│   │   └── validators
+│   │       ├── validators.authenticate.js
+│   │       ├── validators.project.js
+│   │       └── validators.task.js
+│   ├── models
+│   │   ├── models.project.js
+│   │   ├── models.session.js
+│   │   ├── models.task.js
+│   │   └── models.user.js
+│   ├── routes
+│   │   ├── index.js
+│   │   └── v1
+│   │       ├── routes.authentication.js
+│   │       ├── routes.project.js
+│   │       └── routes.task.js
+│   ├── server.js
+│   ├── services
+│   │   ├── services.authentication.js
+│   │   ├── services.project.js
+│   │   ├── services.sessions.js
+│   │   └── services.task.js
+│   └── utils
+│       ├── customError.js
+│       ├── jwtHelper.js
+│       ├── logger.js
+│       ├── mongoIdGenerator.js
+│       └── response.js
+└── tests
+    ├── integration
+    │   ├── authentication.test.js
+    │   ├── projects.test.js
+    │   └── tasks.test.js
+    └── unit
+        ├── authentication.test.js
+        ├── projects.test.js
+        └── tasks.test.js
